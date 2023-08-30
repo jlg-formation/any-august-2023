@@ -11,7 +11,7 @@ describe("Gestion Stock", () => {
     cy.get("a.button.primary");
   });
 
-  it.only("should add an article", () => {
+  it("should add an article", () => {
     cy.visit("https://jlg-formation.github.io/cypress-gestion-stock/");
 
     cy.contains("a.button.primary", "Voir le stock").click();
