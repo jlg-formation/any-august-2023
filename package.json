@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/node": "^20.5.7",
     "cypress": "^13.0.0",
+    "cypress-plugin-tab": "^1.0.5",
     "typescript": "^5.2.2"
   }
 }

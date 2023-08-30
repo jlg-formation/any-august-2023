@@ -33,7 +33,7 @@ describe("Gestion Stock", () => {
     const testname = `o-${id}`;
 
     cy.get("input").eq(0).clear().type(testname);
-    cy.get("input").eq(1).clear().type("12.34");
+    cy.tab().clear().type("12.34");
 
     cy.get("input[type=range]").invoke("val", 34).trigger("change");
 
