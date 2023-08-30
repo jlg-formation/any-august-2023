@@ -47,6 +47,10 @@ describe("Gestion Stock", () => {
 
     cy.contains("button", "Ajouter").click();
 
-    cy.contains("table tbody tr td", testname);
+    cy.contains("table tbody tr td", testname).click();
+
+    cy.get("button[title='Supprimer']").click();
+
+    cy.contains("table tbody tr td", testname).should("not.exist");
   });
 });
