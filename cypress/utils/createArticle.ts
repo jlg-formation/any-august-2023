@@ -16,4 +16,9 @@ export const createArticle = (a1: Article, testname: string) => {
     cy.contains("div.radio span", "Périssable").click();
     cy.get("input[type='date']").type(a1.limitDate);
   }
+
+  cy.get("input[type='file']").selectFile([
+    "cypress/fixtures/images/jlg.jpg",
+    "cypress/fixtures/images/jlg2.jpg",
+  ]);
 };

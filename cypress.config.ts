@@ -7,6 +7,7 @@ export default defineConfig({
     },
     specPattern: ["cypress/e2e/**/*.cy.ts"],
     excludeSpecPattern: ["cypress/e2e/**/*a2.cy.ts"],
+    experimentalStudio: true,
   },
   video: true,
 });
