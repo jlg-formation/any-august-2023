@@ -18,3 +18,22 @@ export const a2: Article = {
   type: "Jardin",
   limitDate: "2023-09-30",
 };
+
+export const articles: Article[] = [
+  {
+    name: "Tournevis",
+    price: 12,
+    qty: 22,
+    isUsed: false,
+    type: "Jardin",
+    limitDate: undefined,
+  },
+  {
+    name: "Pelle",
+    price: 13,
+    qty: 34,
+    isUsed: false,
+    type: "Jardin",
+    limitDate: undefined,
+  },
+];
