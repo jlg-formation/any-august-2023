@@ -1,3 +1,5 @@
+import { a1 } from "../fixtures/articles";
+
 describe("Gestion Stock", () => {
   it("home page", () => {
     cy.visit("https://jlg-formation.github.io/cypress-gestion-stock/");
@@ -30,12 +32,12 @@ describe("Gestion Stock", () => {
 
     const uuid = () => Cypress._.random(0, 1e6);
     const id = uuid();
-    const testname = `o-${id}`;
+    const testname = `${a1.name}${id}`;
 
     cy.get("input").eq(0).clear().type(testname);
-    cy.tab().clear().type("12.34");
+    cy.tab().clear().type(`${a1.price}`);
 
-    cy.get("input[type=range]").invoke("val", 34).trigger("change");
+    cy.get("input[type=range]").invoke("val", a1.qty).trigger("change");
 
     cy.contains("div.radio label", "Occasion").click();
 
