@@ -17,6 +17,7 @@ describe("Gestion Stock", () => {
   });
 
   it.only("should add an article", () => {
+    cy.clock();
     cy.visit(url);
 
     cy.intercept({ method: "GET", url: "/api/articles" }, articles).as(
@@ -24,6 +25,7 @@ describe("Gestion Stock", () => {
     );
 
     cy.contains("a.button.primary", "Voir le stock").click();
+    cy.tick(3000);
     cy.wait("@GetArticles");
 
     cy.url().should("eq", url + "/stock");
@@ -46,6 +48,7 @@ describe("Gestion Stock", () => {
 
     cy.intercept({ method: "POST", url: "/api/articles" }, "");
     cy.contains("button", "Ajouter").click();
+    cy.tick(3000);
     cy.wait("@GetArticles2");
 
     cy.contains("table tbody tr td", testname).click();
@@ -55,6 +58,7 @@ describe("Gestion Stock", () => {
     );
     cy.intercept({ method: "DELETE", url: "/api/articles" }, "");
     cy.get("button[title='Supprimer']").click();
+    cy.tick(3000);
     cy.wait("@GetArticles3");
 
     cy.contains("table tbody tr td", testname).should("not.exist");
